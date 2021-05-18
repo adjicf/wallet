@@ -179,7 +179,7 @@ function createNearClient (network, mnemonic) {
 function createRskClient (asset, network, mnemonic, walletType) {
   const isTestnet = network === 'testnet'
   const rskNetwork = AssetNetworks.RBTC[network]
-  const rpcApi = isTestnet ? 'https://public-node.testnet.rsk.co' : 'https://public-node.rsk.co'
+  const rpcApi = isTestnet ? 'http://localhost:8545' : 'http://ganache:8545'
   const scraperApi = isTestnet ? 'https://liquality.io/rsk-testnet-api' : 'https://liquality.io/rsk-mainnet-api'
 
   return createEthereumClient(asset, rskNetwork, rpcApi, scraperApi, EthereumRpcFeeProvider, mnemonic, walletType)
